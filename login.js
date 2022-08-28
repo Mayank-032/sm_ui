@@ -1,18 +1,16 @@
 const form = document.getElementById("signupForm");
 
 const submitFun = async (e) => {
-  e.preventDefault()
-  let name = document.getElementById("name").value
+    e.preventDefault();
   let email = document.getElementById("email").value
   let password = document.getElementById("password").value
 
-  let data = await axios.post("http://localhost:3000/signup", {
-    name,
+  let data = await axios.post("http://localhost:3000/signin", {
     email,
     password,
   })
   .then(function(res) {
-    location.replace("http://127.0.0.1:5500/login.html")
+    location.replace("dashboard.html")
   })
 };
 
